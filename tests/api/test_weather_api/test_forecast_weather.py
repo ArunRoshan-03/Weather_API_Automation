@@ -1,7 +1,8 @@
-import requests
 import datetime
-from lib.util.constants import *
-from lib.util.utilities import headers
+
+import requests
+
+from lib.util.utilities import *
 
 
 # Per condition
@@ -11,13 +12,8 @@ class TestForecastWeather:
     def test_forecast_weather_with_data(self):
         today = datetime.date.today()
         future_date = today + datetime.timedelta(days=14)
-        params = {
-            "key": "949aae2f0369405593254608232206",
-            "q": current_location,
-            "dt": forecast_dates
-        }
 
-        response = requests.get(forecast_url, headers=headers, params=params)
+        response = requests.get(forecast_url, headers=headers, params=forcast_params)
         if response.status_code == 200:
             try:
                 json_data = response.json()

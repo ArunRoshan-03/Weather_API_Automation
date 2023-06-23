@@ -1,5 +1,5 @@
 data_types = {
-   ' last_updated': str,
+    ' last_updated': str,
     'temp_c': float,
     'temp_f': float,
     'is_day': int,

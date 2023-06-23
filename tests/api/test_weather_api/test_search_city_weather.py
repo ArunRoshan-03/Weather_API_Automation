@@ -1,16 +1,11 @@
 import requests
 
-from lib.util.constants import *
-from lib.util.utilities import headers
+from lib.util.utilities import *
 
 
 class TestCityWeather:
 
     def test_search_city_weather(self):
-        params = {
-            "key": "949aae2f0369405593254608232206",
-            "q": current_location
-        }
         response = requests.get(search_url, headers=headers, params=params)
         if response.status_code == 200:
             json_data = response.json()

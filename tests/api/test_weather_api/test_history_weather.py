@@ -1,7 +1,6 @@
 import requests
 
-from lib.util.constants import *
-from lib.util.utilities import headers
+from lib.util.utilities import *
 
 
 # Per condition
@@ -9,13 +8,7 @@ from lib.util.utilities import headers
 class TestHistoryWeather:
 
     def test_history_weather_with_data(self):
-        params = {
-            "key": "949aae2f0369405593254608232206",
-            "q": current_location,
-            "dt": history_dates
-        }
-
-        response = requests.get(history_url, headers=headers, params=params)
+        response = requests.get(history_url, headers=headers, params=history_params)
         if response.status_code == 200:
             try:
                 json_data = response.json()

@@ -1,18 +1,12 @@
 import requests
 
 from lib.data.current_datatype import data_types
-from lib.util.constants import *
 from lib.util.utilities import *
 
 
 class TestCurrentWeather:
 
     def test_current_weather_data_type(self):
-        params = {
-            "key": "949aae2f0369405593254608232206",
-            "q": current_location
-        }
-
         response = requests.get(current_url, headers=headers, params=params)
         json_data = response.json()
         current_data = json_data["current"]
